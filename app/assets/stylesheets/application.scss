@@ -16,3 +16,8 @@
 
 @import 'tachyons';
 @import 'colors';
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: $rover_red;
+}

@@ -1,24 +1,19 @@
-# README
+# PersevApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project tracking webapp proudly oriented to Rover Scouts. More on this later.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Development	
 
-* Configuration
+```sh
+# Build the docker images
+$ docker-compose build
 
-* Database creation
+# Create db and run migrations
+$ docker-compose run db:create db:migrate
 
-* Database initialization
+# Get it up & running
+$ docker-compose up
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

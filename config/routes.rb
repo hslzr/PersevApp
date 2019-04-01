@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/', to: 'pages#index', as: :index
   get '/about', to: 'pages#about', as: :about
   get '/contact', to: 'pages#contact', as: :contact
+
+  resources :projects
 end

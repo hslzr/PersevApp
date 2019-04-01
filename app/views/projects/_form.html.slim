@@ -1,0 +1,17 @@
+= simple_form_for(@project) do |f|
+  = hidden_field_tag 'project[user_id]', current_user.id
+  .cf.mb3
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .cf.mb3
+    .fl.w-100.w-third-ns.pr3-ns
+      = label_tag 'project_name', 'Name',
+        class: 'f6 db fw4 dark-gray'
+
+      = f.input :name,
+        label: false,
+        input_html: { class: 'input-reset pa2 ba b--near-black' }
+  
+  = f.button :submit,
+    class: 'f5 ba b--near-black pa2'

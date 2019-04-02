@@ -9,6 +9,7 @@ RUN apt-get update -qqq && apt-get install -y -qqq --no-install-recommends \
     build-essential \
     curl \
     gnupg1 gnupg2 \
+    graphviz \
     libpq-dev \
     nodejs \
     && rm -rf /var/lib/apt/lists/*

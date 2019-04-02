@@ -17,7 +17,8 @@
       = f.label :what_todo, '¿Qué quiero hacer?', class: 'gray f3'
       span.db.pv3
         ' Descripción del proyecto a realizar.
-      = f.rich_text_area :what_todo
+      .trix-no-toolbar
+        = f.rich_text_area :what_todo, class: 'arandomclass'
 
   .cf.mb3.mb5-ns
     .fl.w-100
@@ -25,7 +26,8 @@
       span.db.pv3
         ' Describe como planeas ejecutar el proyecto, materiales, fechas, 
         ' tiempos, actividades a realizar, apoyo necesario, etc.
-      = f.rich_text_area :how_todo
+      .trix-no-toolbar
+        = f.rich_text_area :how_todo
 
   .cf.mb3.mb5-ns
     .fl.w-100
@@ -33,7 +35,8 @@
       span.db.pv3
         ' Describe el beneficio personal que obtienes de este proyecto,
         ' el aprendizaje que deseas obtener al hacerlo, el beneficio que dejas a la sociedad, etc.
-      = f.rich_text_area :why_todo
+      .trix-no-toolbar
+        = f.rich_text_area :why_todo
 
   .cf.mb3
     .fl.w-100

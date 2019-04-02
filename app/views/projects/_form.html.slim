@@ -1,0 +1,61 @@
+= simple_form_for(@project) do |f|
+  = hidden_field_tag 'project[user_id]', current_user.id
+  .cf.mb3
+    = f.error_notification
+    = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .cf.mb3
+    .fl.w-100
+      = label_tag 'project_name', 'Nombre',
+        class: 'f5 db fw4 gray'
+      = f.input :name,
+        label: false,
+        input_html: { class: 'f2 input-reset bn', placeholder: 'Nuevo Proyecto' }
+
+  .cf.mb3.mb5-ns
+    .fl.w-100
+      = f.label :what_todo, '¿Qué quiero hacer?', class: 'gray f3'
+      span.db.pv3
+        ' Descripción del proyecto a realizar.
+      = f.rich_text_area :what_todo
+
+  .cf.mb3.mb5-ns
+    .fl.w-100
+      = f.label :how_todo, '¿Cómo lo quiero hacer?', class: 'gray f3'
+      span.db.pv3
+        ' Describe como planeas ejecutar el proyecto, materiales, fechas, 
+        ' tiempos, actividades a realizar, apoyo necesario, etc.
+      = f.rich_text_area :how_todo
+
+  .cf.mb3.mb5-ns
+    .fl.w-100
+      = f.label :why_todo, '¿Para qué lo quiero hacer?', class: 'gray f3'
+      span.db.pv3
+        ' Describe el beneficio personal que obtienes de este proyecto,
+        ' el aprendizaje que deseas obtener al hacerlo, el beneficio que dejas a la sociedad, etc.
+      = f.rich_text_area :why_todo
+
+  .cf.mb3
+    .fl.w-100
+      h3.underline Avanzado
+  
+  .cf.mb3.mb5-ns
+    .fl.w-100.w-50-ns.pr3-ns
+      = label_tag 'project_general_objective', 'Objetivo General',
+        class: 'f6 fb fw4 dark-gray'
+      = f.input :general_objective,
+        label: false,
+        input_html: { class: 'input-reset pa2 ba b--near-black w-100' }
+      small.f6.gray.i.tr.db
+        ' ¿Cuál es el objetivo general del proyecto?
+    .fl.w-100.w-50-ns.pl3-ns
+      = label_tag 'project_particular_objective', 'Objetivo Particular',
+        class: 'f6 fb fw4 dark-gray'
+      = f.input :particular_objective,
+        label: false,
+        input_html: { class: 'input-reset pa2 ba b--near-black w-100' }
+      small.f6.gray.i.tr.db
+        ' ¿Cuál es el objetivo particular del proyecto?
+  
+  = f.button :submit,
+    class: 'f5 ba b--near-black pa2'

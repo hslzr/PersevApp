@@ -51,6 +51,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :user_id)
+    params.require(:project).permit(:name, :user_id, :what_todo, :how_todo,
+                                   :why_todo, :general_objective,
+                                   :particular_objective)
   end
 end

@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :hexid
       t.datetime :starts_at
       t.boolean :complete, default: false
-      t.integer :field, default: 0
+      t.string :field
 
       t.text :general_objective
       t.text :particular_objective

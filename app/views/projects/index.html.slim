@@ -1,25 +1,26 @@
-h1 Listing projects
+h1 Listado de Proyectos
 
 table.w-100.f6 cellspacing="0"
   thead
     tr
-      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white width="70%" Name
-      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white colspan="3" Actions
+      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white width="80%" Proyecto
+      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white colspan="3"
   tbody.lh-copy
     - @projects.each do |project|
       tr.hover-bg-light-gray
         td.pa3.bb.b--black-20
-          span.gray
-            | (#{project.hexid})
-          =<> project.name
+          = link_to project_path(project), class: 'link'
+            span.gray
+              | (#{project.hexid})
+            =<> project.name
         td.pa3.bb.b--black-20
-          = link_to 'Show', project
+          = link_to 'Detalle', project
         td.pa3.bb.b--black-20
-          = link_to 'Edit', edit_project_path(project)
+          = link_to 'Editar', edit_project_path(project)
         td.pa3.bb.b--black-20
-          = link_to 'Destroy', project, method: :delete,
+          = link_to 'Eliminar', project, method: :delete,
             data: { confirm: 'Are u sure?' }
 
 br
 
-= link_to 'New Project', new_project_path
+= link_to 'Nuevo proyecto', new_project_path

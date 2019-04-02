@@ -1,6 +1,25 @@
-p#notice = notice
+p#notice.green = notice
 
+.cf.mt3
+  .fl.w-100
+    h1.mv0 = @project.name
 
-=> link_to 'Edit', edit_project_path(@project)
-'|
-=< link_to 'Back', projects_path
+.cf.mt3
+  .fl.w-100
+    h3 ¿Qué quiero hacer?
+    == @project.what_todo
+
+.cf.mt3
+  .fl.w-100
+    h3 ¿Cómo lo quiero hacer?
+    == @project.how_todo
+
+.cf.mt3
+  .fl.w-100
+    h3 ¿Para qué lo quiero hacer?
+    == @project.why_todo
+
+.cf.mt3.mt5-ns
+  => link_to 'Edit', edit_project_path(@project)
+  '|
+  =< link_to 'Back', projects_path

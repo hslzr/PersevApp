@@ -21,8 +21,14 @@ ActiveRecord::Schema.define(version: 2019_04_01_072838) do
     t.string "hexid"
     t.datetime "starts_at"
     t.boolean "complete", default: false
+    t.integer "field", default: 0
+    t.text "general_objective"
+    t.text "particular_objective"
+    t.text "evaluation_criteria"
+    t.string "adviser"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["hexid"], name: "index_projects_on_hexid"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -30,6 +36,10 @@ ActiveRecord::Schema.define(version: 2019_04_01_072838) do
     t.bigint "project_id"
     t.string "name"
     t.boolean "complete", default: false
+    t.datetime "starts_at"
+    t.text "economic_resources"
+    t.text "human_resources"
+    t.text "material_resources"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"

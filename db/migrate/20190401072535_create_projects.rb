@@ -6,8 +6,17 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.string :hexid
       t.datetime :starts_at
       t.boolean :complete, default: false
+      t.integer :field, default: 0
+
+      t.text :general_objective
+      t.text :particular_objective
+      t.text :evaluation_criteria
+
+      t.string :adviser
 
       t.timestamps
     end
+
+    add_index :projects, :hexid
   end
 end

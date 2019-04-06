@@ -36,6 +36,7 @@ class Project < ApplicationRecord
                         content_type: FileFormat.documents,
                         limit: { max: 10 }
 
+
   private
 
   def generate_hexid

@@ -9,3 +9,6 @@ local:
 amazon:
   service: S3
   bucket: persevapp
+  region: us-west-2
+  access_key_id: AKIAJ5JK4INBHY4CBI2A
+  secret_access_key: 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

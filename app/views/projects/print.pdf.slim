@@ -1,8 +1,15 @@
 - content_for :title
   = @project.name
 
-p == @project.what_todo
+h4.mb0.gray Proyecto
+h1.mv0 = @project.name
+h3.mt0.mb4.f5 =<> @project.user.name
 
-p == @project.why_todo
+h3.mb1 ¿Qué quiero hacer?
+== @project.what_todo
 
-p == @project.how_todo
+h3.mb1 ¿Para qué lo quiero hacer?
+== @project.why_todo
+
+h3.mb1 ¿Cómo lo quiero hacer?
+== @project.how_todo

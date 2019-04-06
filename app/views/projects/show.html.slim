@@ -1,23 +1,34 @@
-p#notice.green = notice
-
 .cf.mt3
   .fl.w-100
+    h4.mv0.gray Proyecto
     h1.mv0 = @project.name
+    h3.mt0.f5 =<> @project.user.full_name
 
 .cf.mt3
-  .fl.w-100
+  .fl.w-100.w-75-ns
     h3 ¿Qué quiero hacer?
     == @project.what_todo
 
-.cf.mt3
-  .fl.w-100
     h3 ¿Cómo lo quiero hacer?
     == @project.how_todo
 
-.cf.mt3
-  .fl.w-100
     h3 ¿Para qué lo quiero hacer?
     == @project.why_todo
+
+  .fl.w-100.w-25-ns
+    section.mb2
+      h3.underline Imágenes
+      - @project.images.each do |image|
+        = image_tag image, size: '100x100', class: 'dib mr1'
+    section
+      h3.underline Archivos adjuntos
+      ul.list.pl0
+        - @project.documents.each do |doc|
+          li.pa2
+            = link_to doc.filename,
+              rails_blob_path(doc, disposition: :attachment),
+              class: 'link blue'
+      
 
 .cf.mt3.mt5-ns
   => link_to 'Edit', edit_project_path(@project)

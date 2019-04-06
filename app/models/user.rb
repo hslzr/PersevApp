@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   after_create :send_welcome_email
 
+  def full_name
+    [name, last_name, sur_name].compact.join(' ')
+  end
 
   private
 

@@ -4,7 +4,7 @@ table.w-100.f6 cellspacing="0"
   thead
     tr
       th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white width="80%" Proyecto
-      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white colspan="3"
+      th.fw6.bb.b--black-30.tl.pb3.pr3.bg-white colspan="4"
   tbody.lh-copy
     - @projects.each do |project|
       tr.hover-bg-light-gray
@@ -17,6 +17,8 @@ table.w-100.f6 cellspacing="0"
           = link_to 'Detalle', project
         td.pa3.bb.b--black-20
           = link_to 'Editar', edit_project_path(project)
+        td.pa3.bb.b--black-20
+          = link_to 'Imprimit', project_path(project, format: :pdf)
         td.pa3.bb.b--black-20
           = link_to 'Eliminar', project, method: :delete,
             data: { confirm: 'Are u sure?' }

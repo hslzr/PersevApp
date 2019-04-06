@@ -12,6 +12,9 @@ RUN apt-get update -qqq && apt-get install -y -qqq --no-install-recommends \
     graphviz \
     libpq-dev \
     nodejs \
+    libxrender1 libfontconfig1 libfontconfig1-dev libfreetype6-dev libx11-dev \
+    libxcursor-dev libxext-dev libxfixes-dev \
+    libxft-dev libxi-dev libxrandr-dev libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Remove default NodeJS package

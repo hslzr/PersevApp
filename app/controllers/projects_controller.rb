@@ -8,6 +8,15 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render template: 'projects/print.pdf',
+               disposition: :inline,
+               pdf: @project.name,
+               layout: 'pdfs/base.html.slim'
+      end
+    end
   end
 
   # GET /projects/new

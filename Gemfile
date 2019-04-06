@@ -14,6 +14,9 @@ gem 'slim-rails'
 gem 'tachyons-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '>= 4.0.0.rc.3'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary-edge'
 
 group :development, :test do
   gem 'better_errors'

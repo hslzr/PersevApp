@@ -8,6 +8,6 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application', defer: true
   body.sans-serif
-    = render partial: 'layouts/navbar'
+    = render partial: 'layouts/navbar' if current_user
     .mw8.ph1.ph3-ns.center
       = yield

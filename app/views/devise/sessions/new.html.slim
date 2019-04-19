@@ -1,0 +1,27 @@
+section.tc
+  article.dib.center.ph3.ph5-ns.pv2
+    h2.f2 Inicio de sesión
+
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email,
+          required: false,
+          autofocus: true,
+          label: false,
+          input_html: { autocomplete: "email", class: 'input-reset pa2 ba b--near-black', placeholder: 'Email' }
+        = f.input :password,
+          required: false,
+          label: false,
+          input_html: { autocomplete: "current-password", class: 'input-reset pa2 ba mt3 b--near-black', placeholder: 'Contraseña' }
+        = f.input :remember_me,
+          class: 'input-reset',
+          label_html: { class: 'pa2 mt2 db' },
+          input_html: { class: 'pcheckbox' },
+          label: 'Recordar datos',
+          as: :boolean if devise_mapping.rememberable?
+
+      .form-actions
+        = f.button :submit, "Entrar",
+          class: 'bg-near-black white dib pv2 ph4 ba b--near-black mb4'
+
+    = render "devise/shared/links"

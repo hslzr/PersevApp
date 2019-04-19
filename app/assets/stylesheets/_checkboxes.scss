@@ -1,0 +1,16 @@
+.pcheckbox {
+  padding: .27rem;
+  margin-right: .4rem;
+  border-style: solid;
+  border-width: 1px;
+  transition: background-color 250ms;
+  background-color: transparent;
+
+  // Reset styles
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:checked {
+    background-color: black;
+  }
+}

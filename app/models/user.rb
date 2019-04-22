@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :group, optional: true
+  belongs_to :section, optional: true
 end

@@ -6,5 +6,5 @@ nav.pa3.center.mw8.bb.b--gray
   = link_to 'Contact', contact_path, class: 'link dim gray f6 f5-ns dib mr3'
   - if current_user
     span.mr3 | 
-    =<> link_to 'Logout', destroy_user_session_path, method: :delete,
+    =<> link_to "Logout (#{current_user.email})", destroy_user_session_path, method: :delete,
       class: 'link dim gray underline f6 f5-ns dib mr3'

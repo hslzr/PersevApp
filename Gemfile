@@ -15,6 +15,8 @@ gem 'tachyons-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '>= 4.0.0.rc.3'
 
+gem 'rack-mini-profiler'
+
 group :development, :test do
   gem 'better_errors'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

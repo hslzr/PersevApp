@@ -1,2 +1,11 @@
-h1.rover-red Pages#index
-p Find me in app/views/pages/index.html.slim
+h1 Grupo #{current_account.group.number}
+
+article
+  h3 Calendario de actividades
+  ul.list.pl0
+    - current_account.events.each do |event|
+      li.db.mb2
+        p.mv0
+          = event.name
+          br
+          small = event.starts_at&.strftime('%A %d de %B, %I:%M %p')

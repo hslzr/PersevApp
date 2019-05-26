@@ -1,0 +1,17 @@
+h1.underline.b #{@section.name}
+
+.cf
+  .fl.w-100.w-third-ns.pa2.pl0-ns
+    article.ba.b--near-black
+      h3.white.bg-near-black.pv2.ph3.mv0 Actividades (#{@section.events.count})
+      section
+        ul.list.pa0.mv0
+          = render partial: 'sections/event',
+            collection: @section.events.sort_by(&:starts_at), as: :event,
+            cached: true
+      
+
+  .fl.w-100.w-third-ns.pa2
+    h3.white.bg-near-black.pv2.ph3.mv0 Integrantes
+  .fl.w-100.w-third-ns.pa2.pr0-ns
+    h3.white.bg-near-black.pv2.ph3.mv0 Documentos

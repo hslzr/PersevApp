@@ -1,10 +1,18 @@
 nav.pa3.center.mw8.bb.b--gray
-  span.dib.mr3.ttu.f6.gray.underline Debug links:
   = link_to 'PersevApp', root_path, class: 'link dim black b f6 f5-ns dib mr3'
-  = link_to 'Index', root_path, class: 'link dim gray f6 f5-ns dib mr3'
-  = link_to 'About', about_path, class: 'link dim gray f6 f5-ns dib mr3'
-  = link_to 'Contact', contact_path, class: 'link dim gray f6 f5-ns dib mr3'
-  - if current_user
-    span.mr3 | 
-    =<> link_to "Logout (#{current_user.email})", destroy_user_session_path, method: :delete,
-      class: 'link dim gray underline f6 f5-ns dib mr3'
+  = link_to 'Manada', section_index_path('manada'),
+    class: 'link dim gray f6 f5-ns dib mr3'
+  = link_to 'Tropa', section_index_path('tropa'),
+    class: 'link dim gray f6 f5-ns dib mr3'
+  = link_to 'Caminantes', section_index_path('caminantes'),
+    class: 'link dim gray f6 f5-ns dib mr3'
+  = link_to 'Clan', section_index_path('clan'),
+    class: 'link dim gray f6 f5-ns dib mr3'
+  = link_to 'Dirigentes', section_index_path('dirigentes'),
+    class: 'link dim gray f6 f5-ns dib mr3'
+  span.mr3 |
+  = link_to 'Settings', nil,
+    class: 'link dim gray underline f6 f5-ns dib mr3'
+  span.mr3 | 
+  =<> link_to "Logout (#{current_user.email})", destroy_user_session_path, method: :delete,
+    class: 'link dim gray underline f6 f5-ns dib mr3'

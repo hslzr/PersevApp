@@ -56,12 +56,17 @@ class ProjectsController < ApplicationController
 
   private
   def set_project
-    @project = Project.includes(:user).find(params[:id])
+    @project = Project
+      .includes(:user)
+      .with_attached_images
+      .with_attached_documents
+      .find(params[:id])
   end
 
   def project_params
-    params.require(:project).permit(:name, :user_id, :what_todo, :how_todo,
-                                   :why_todo, :general_objective,
-                                   :particular_objective)
+    params.require(:project)
+      .permit(:name, :user_id, :what_todo, :how_todo, :why_todo,
+              :general_objective, :particular_objective,
+              images: [], documents: [])
   end
 end

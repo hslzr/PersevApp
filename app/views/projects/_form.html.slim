@@ -37,6 +37,17 @@
         ' el aprendizaje que deseas obtener al hacerlo, el beneficio que dejas a la sociedad, etc.
       .trix-no-toolbar
         = f.rich_text_area :why_todo
+          
+  
+  .cf.mb3
+    .fl.w-100.w-50-ns
+      h3.underline Imágenes
+      = f.input :images, as: :file,
+        input_html: { multiple: true }
+    .fl.w-100.w-50-ns
+      h3.underline Archivos adjuntos
+      = f.input :documents, as: :file,
+        input_html: { multiple: true }
 
   .cf.mb3
     .fl.w-100

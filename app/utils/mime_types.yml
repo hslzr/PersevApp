@@ -1,0 +1,25 @@
+:word_files:
+  - application/msword
+  - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+:excel_files:
+  - application/vnd.ms-excel
+  - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+:powerpoint_files:
+  - application/vnd.ms-powerpoint
+  - application/vnd.openxmlformats-officedocument.presentationml.presentation
+
+:image_files:
+  - image/gif
+  - image/png
+  - image/jpg
+  - image/jpeg
+
+:general_files:
+  - application/pdf
+  - application/zip
+  - application/x-7z-compressed
+  - text/csv
+  - text/json
+  - text/plain

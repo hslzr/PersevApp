@@ -20,6 +20,23 @@ class Project < ApplicationRecord
   has_rich_text :how_todo
   has_rich_text :why_todo
 
+  has_many_attached :images
+  has_many_attached :documents
+
+  # Validations
+  #   Project attributes
+  validates :name, presence: true
+
+  #   Attachments
+  validates :images, size: { less_than: 5.megabytes },
+                     content_type: FileFormat.images,
+                     limit: { max: 7 }
+
+  validates :documents, size: { less_than: 5.megabytes },
+                        content_type: FileFormat.documents,
+                        limit: { max: 10 }
+
+
   private
 
   def generate_hexid

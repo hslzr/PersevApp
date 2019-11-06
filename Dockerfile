@@ -11,6 +11,7 @@ RUN apt-get update -qqq && apt-get install -y -qqq --no-install-recommends \
     gnupg1 gnupg2 \
     graphviz \
     libpq-dev \
+    vim \
     nodejs \
     libxrender1 libfontconfig1 libfontconfig1-dev libfreetype6-dev libx11-dev \
     libxcursor-dev libxext-dev libxfixes-dev \

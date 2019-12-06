@@ -8,7 +8,7 @@ gem 'aws-sdk-s3'
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'devise'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'rails', '~> 6.0.0.beta3'
 gem 'sassc-rails'
 gem 'simple_form'
